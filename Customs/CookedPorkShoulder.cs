@@ -49,11 +49,20 @@ namespace RoastPorkMod.Customs
         public override void OnRegister(GameDataObject gameDataObject)
         {
             //third one should be string
+
+            //New Testing
+            GameObject go = Prefab.GetChild("PorkShoulderCookedNew");
+            go.ApplyMaterial("Sauce - Mushroom Cooked", "Porkchop", "Porkchop Fat");
+            go.GetChild("Pork").ApplyMaterial("Porkchop Fat", "Porkchop");
+            go.GetChild("Pork2").ApplyMaterial("Porkchop Fat", "Porkchop");
+
+
+            /* Old
             GameObject go = Prefab.GetChild("PorkShoulderCooked");
             go.ApplyMaterial("Sauce - Mushroom Cooked", "Porkchop", "Porkchop Fat");
             go.GetChild("PorkMarbling").ApplyMaterial("Porkchop Fat");
             go.GetChild("PorkMarbling1").ApplyMaterial("Porkchop Fat");
-
+            */
         }
     }
 }
