@@ -1,4 +1,5 @@
 ﻿using IngredientLib.Util;
+using Kitchen;
 using KitchenData;
 using KitchenLib.Customs;
 using KitchenLib.Utils;
@@ -6,13 +7,15 @@ using KitchenRoastPorkMod;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 using UnityEngine;
+using static RoastPorkMod.Customs.CookedPorkShoulderWithoutCrackling;
 
 namespace RoastPorkMod.Customs
 {
-    internal class CracklingItem : CustomItemGroup
+    internal class CracklingItem : CustomItem
     {
         public override string UniqueNameID => "CracklingItem";
         public override GameObject Prefab => Mod.Bundle.LoadAsset<GameObject>("CracklingItem");
@@ -24,24 +27,23 @@ namespace RoastPorkMod.Customs
         public override int SplitCount => 2;
         public override float SplitSpeed => 3.0f;
 
-        public override List<ItemGroup.ItemSet> Sets => new()
-        {
-            new ItemGroup.ItemSet()
-            {
-                Max = 3,
-                Min = 3,
-                IsMandatory = true,
-                Items = new List<Item>()
-                {
-                    Mod.CracklingPortion,
-                    Mod.CracklingPortion,
-                    Mod.CracklingPortion
-                }
-            },
-        };
+
         public override void OnRegister(GameDataObject gameDataObject)
         {
-            Prefab.GetChild("PorkCracklingItem").ApplyMaterial("Sauce - Mushroom Cooked");
+            Prefab.GetChildFromPath("PorkCracklingItem/PorkCracklingItem").ApplyMaterial("Sauce - Mushroom Cooked");
+            Prefab.GetChildFromPath("PorkCracklingItem/PorkCracklingItem1").ApplyMaterial("Sauce - Mushroom Cooked");
+            Prefab.GetChildFromPath("PorkCracklingItem/PorkCracklingItem2").ApplyMaterial("Sauce - Mushroom Cooked");
+
+
+            var view = Prefab.AddComponent<ObjectsSplittableView>();
+            FieldInfo info = ReflectionUtils.GetField<ObjectsSplittableView>("Objects");
+
+            List<GameObject> list = new List<GameObject>()
+            {
+                Prefab.GetChildFromPath("PorkCracklingItem/PorkCracklingItem2"),
+                Prefab.GetChildFromPath("PorkCracklingItem/PorkCracklingItem1"),
+            };
+            info.SetValue(view, list);
         }
     }
 }

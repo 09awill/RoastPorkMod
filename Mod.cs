@@ -23,7 +23,7 @@ namespace KitchenRoastPorkMod
         // Mod Version must follow semver notation e.g. "1.2.3"
         public const string MOD_GUID = "Madvion.Plateup.RoastPorkMod";
         public const string MOD_NAME = "Roast Pork Mod";
-        public const string MOD_VERSION = "0.1.0";
+        public const string MOD_VERSION = "0.1.1";
         public const string MOD_AUTHOR = "Madvion";
         public const string MOD_GAMEVERSION = ">=1.1.4";
         // Game version this mod is designed for in semver
@@ -55,7 +55,7 @@ namespace KitchenRoastPorkMod
 
 
 
-        internal static ItemGroup CracklingItem => GetModdedGDO<ItemGroup, CracklingItem>();
+        internal static Item CracklingItem => GetModdedGDO<Item, CracklingItem>();
         internal static Item CracklingPortion => GetModdedGDO<Item, CracklingPortion>();
         internal static Item AppleSauce => GetModdedGDO<Item, AppleSauce>();
 
@@ -63,8 +63,8 @@ namespace KitchenRoastPorkMod
         internal static ItemGroup PlatedPorkChop => GetModdedGDO<ItemGroup, PlatedPorkChop>();
         internal static ItemGroup PlatedPorkChopWithToppings => GetModdedGDO<ItemGroup, PlatedPorkChopWithToppings>();
 
-        internal static ItemGroup CookedPorkShoulder => GetModdedGDO<ItemGroup, CookedPorkShoulder>();
-        internal static ItemGroup CookedPorkShoulderWithoutCrackling => GetModdedGDO<ItemGroup, CookedPorkShoulderWithoutCrackling>();
+        internal static Item CookedPorkShoulder => GetModdedGDO<Item, CookedPorkShoulder>();
+        internal static Item CookedPorkShoulderWithoutCrackling => GetModdedGDO<Item, CookedPorkShoulderWithoutCrackling>();
         internal static Item PorkShoulder => GetModdedGDO<Item, PorkShoulder>();
 
         internal static Appliance PorkShoulderProvider => GetModdedGDO<Appliance, PorkShoulderProvider>();

@@ -1,5 +1,7 @@
 ﻿using IngredientLib.Util;
+using Kitchen;
 using KitchenData;
+using KitchenLib.Colorblind;
 using KitchenLib.Customs;
 using KitchenLib.Utils;
 using KitchenRoastPorkMod;
@@ -12,7 +14,7 @@ using UnityEngine;
 
 namespace RoastPorkMod.Customs
 {
-    internal class PlatedPorkChopWithToppings : CustomItemGroup
+    internal class PlatedPorkChopWithToppings : CustomItemGroup<PlatedPorkChopWithToppingsItemGroupView>
     {
         public override string UniqueNameID => "Plated Pork Chop With Toppings";
         public override GameObject Prefab => Mod.Bundle.LoadAsset<GameObject>("PlatedPorkWithTopping");
@@ -20,7 +22,6 @@ namespace RoastPorkMod.Customs
         public override ItemValue ItemValue => ItemValue.MediumLarge;
         public override Item DisposesTo => Mod.Plate;
         public override Item DirtiesTo => Mod.DirtyPlate;
-        public override string ColourBlindTag => "P";
         public override bool CanContainSide => true;
 
         public override List<ItemGroup.ItemSet> Sets => new()
@@ -49,11 +50,54 @@ namespace RoastPorkMod.Customs
         };
         public override void OnRegister(GameDataObject gameDataObject)
         {
-            Prefab.GetChildFromPath("Plate/Plate").ApplyMaterial("Plate");
-            Prefab.GetChildFromPath("Plate/Plate/Cylinder").ApplyMaterial("Plate - Ring");
+            Prefab.GetComponent<PlatedPorkChopWithToppingsItemGroupView>()?.Setup(Prefab);
+
+            Prefab.GetChildFromPath("Plate/Plate/Cylinder").ApplyMaterial("Plate", "Plate - Ring");
+
             Prefab.ApplyMaterialToChild("Pork", "Porkchop Fat", "Porkchop");
-            Material[] mats = new Material[] { MaterialUtils.GetExistingMaterial("Apple Cooked") };
+            Material[] mats = new Material[] { MaterialUtils.GetExistingMaterial("Plastic - Orange") };
             Prefab.GetChild("AppleSauce").ApplyMaterial(mats);
+
+            if (Prefab.TryGetComponent<ItemGroupView>(out var itemGroupView))
+            {
+                GameObject clonedColourBlind = ColorblindUtils.cloneColourBlindObjectAndAddToItem(GameDataObject as ItemGroup);
+                ColorblindUtils.setColourBlindLabelObjectOnItemGroupView(itemGroupView, clonedColourBlind);
+            }
+        }
+    }
+    public class PlatedPorkChopWithToppingsItemGroupView : ItemGroupView
+    {
+        internal void Setup(GameObject pPrefab)
+        {
+            // This tells which sub-object of the prefab corresponds to each component of the ItemGroup
+            // All of these sub-objects are hidden unless the item is present
+
+            ComponentGroups = new()
+            {
+                new()
+                {
+                    GameObject = GameObjectUtils.GetChildObject(pPrefab, "Pork"),
+                    Item = Mod.PorkChop
+                }, 
+                new()
+                {
+                    GameObject = GameObjectUtils.GetChildObject(pPrefab, "AppleSauce"),
+                    Item = Mod.AppleSauce
+                }
+            };
+            ComponentLabels = new()
+            {
+                new()
+                {
+                    Text = "P",
+                    Item = Mod.PorkChop
+                },
+                new()
+                {
+                    Text = "A",
+                    Item = Mod.AppleSauce
+                }
+            };
         }
     }
 }

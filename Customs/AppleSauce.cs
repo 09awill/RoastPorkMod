@@ -26,7 +26,7 @@ namespace RoastPorkMod.Customs
         {
             Material[] mats = new Material[] { MaterialUtils.GetExistingMaterial("Wood 1") };
             Prefab.GetChild("Bowl").ApplyMaterial(mats);
-            mats = new Material[] { MaterialUtils.GetExistingMaterial("Apple Cooked") };
+            mats = new Material[] { MaterialUtils.GetExistingMaterial("Plastic - Orange") };
             Prefab.GetChild("Sauce").ApplyMaterial(mats);
 
         }
