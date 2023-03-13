@@ -66,6 +66,7 @@ namespace RoastPorkMod.Customs
             fridge2.ApplyMaterialToChild("Door", "Metal- Shiny", "Metal Dark", "Door Glass");
             fridge2.ApplyMaterialToChild("Divider", "Plastic - Dark Grey");
             fridge2.ApplyMaterialToChild("Wire", "Plastic - Blue");
+            fridge2.GetChild("Shelf").ApplyMaterial("Plastic - Grey");
         }
     }
 }

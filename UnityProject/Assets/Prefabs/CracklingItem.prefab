@@ -86,9 +86,21 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 283892942569854626, guid: 2ab9d7250fdf5ff45bdc9c81690635d4, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 2ab9d7250fdf5ff45bdc9c81690635d4, type: 3}
       propertyPath: m_Name
       value: PorkCracklingItem
+      objectReference: {fileID: 0}
+    - target: {fileID: 6414244449054252470, guid: 2ab9d7250fdf5ff45bdc9c81690635d4, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 6455247048604918087, guid: 2ab9d7250fdf5ff45bdc9c81690635d4, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2ab9d7250fdf5ff45bdc9c81690635d4, type: 3}

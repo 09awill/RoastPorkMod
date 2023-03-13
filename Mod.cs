@@ -23,7 +23,7 @@ namespace KitchenRoastPorkMod
         // Mod Version must follow semver notation e.g. "1.2.3"
         public const string MOD_GUID = "Madvion.Plateup.RoastPorkMod";
         public const string MOD_NAME = "Roast Pork Mod";
-        public const string MOD_VERSION = "0.1.0";
+        public const string MOD_VERSION = "0.1.1";
         public const string MOD_AUTHOR = "Madvion";
         public const string MOD_GAMEVERSION = ">=1.1.4";
         // Game version this mod is designed for in semver

@@ -52,8 +52,8 @@ namespace RoastPorkMod.Customs
         {
             Prefab.GetComponent<PlatedPorkChopWithToppingsItemGroupView>()?.Setup(Prefab);
 
-            Prefab.GetChildFromPath("Plate/Plate").ApplyMaterial("Plate");
-            Prefab.GetChildFromPath("Plate/Plate/Cylinder").ApplyMaterial("Plate - Ring");
+            Prefab.GetChildFromPath("Plate/Plate/Cylinder").ApplyMaterial("Plate", "Plate - Ring");
+
             Prefab.ApplyMaterialToChild("Pork", "Porkchop Fat", "Porkchop");
             Material[] mats = new Material[] { MaterialUtils.GetExistingMaterial("Plastic - Orange") };
             Prefab.GetChild("AppleSauce").ApplyMaterial(mats);
