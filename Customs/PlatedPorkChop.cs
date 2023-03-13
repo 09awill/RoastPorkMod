@@ -1,4 +1,5 @@
 ﻿using IngredientLib.Util;
+using Kitchen;
 using KitchenData;
 using KitchenLib.Customs;
 using KitchenLib.Utils;
@@ -8,6 +9,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Unity.Entities;
 using UnityEngine;
 
 namespace RoastPorkMod.Customs
