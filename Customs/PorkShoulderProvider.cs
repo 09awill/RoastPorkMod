@@ -1,5 +1,4 @@
-﻿using IngredientLib.Util;
-using Kitchen.Components;
+﻿using Kitchen.Components;
 using Kitchen;
 using KitchenData;
 using KitchenLib.Customs;
@@ -32,7 +31,7 @@ namespace RoastPorkMod.Customs
         {
             KitchenPropertiesUtils.GetUnlimitedCItemProvider(Mod.PorkShoulder.ID)
         };
-        public override void OnRegister(GameDataObject gameDataObject)
+        public override void OnRegister(Appliance gameDataObject)
         {
             GameObject should = Prefab.GetChild("PorkShoulder");
             should.ApplyMaterial("Pork Fat", "Pork", "Pork Fat");

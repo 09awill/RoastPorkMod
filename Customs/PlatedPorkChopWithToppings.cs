@@ -1,5 +1,4 @@
-﻿using IngredientLib.Util;
-using Kitchen;
+﻿using Kitchen;
 using KitchenData;
 using KitchenLib.Colorblind;
 using KitchenLib.Customs;
@@ -52,7 +51,7 @@ namespace RoastPorkMod.Customs
         {
             Prefab.GetComponent<PlatedPorkChopWithToppingsItemGroupView>()?.Setup(Prefab);
 
-            Prefab.GetChildFromPath("Plate/Plate/Cylinder").ApplyMaterial("Plate", "Plate - Ring");
+            Prefab.GetChild("Plate/Plate/Cylinder").ApplyMaterial("Plate", "Plate - Ring");
 
             Prefab.ApplyMaterialToChild("Pork", "Porkchop Fat", "Porkchop");
             Material[] mats = new Material[] { MaterialUtils.GetExistingMaterial("Plastic - Orange") };
