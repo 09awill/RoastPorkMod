@@ -19,7 +19,7 @@ namespace RoastPorkMod.Customs
         public override string UniqueNameID => "Plated Pork Chop";
         public override GameObject Prefab => Mod.Bundle.LoadAsset<GameObject>("PlatedPork");
         public override ItemCategory ItemCategory => ItemCategory.Generic;
-        public override ItemValue ItemValue => ItemValue.MediumLarge;
+        public override ItemValue ItemValue => ItemValue.Medium;
         public override Item DisposesTo => Mod.Plate;
         public override Item DirtiesTo => Mod.DirtyPlate;
         public override string ColourBlindTag => "P";
