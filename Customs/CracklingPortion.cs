@@ -17,7 +17,7 @@ namespace RoastPorkMod.Customs
         public override GameObject Prefab => Mod.Bundle.LoadAsset<GameObject>("CracklingPortion");
         public override ItemCategory ItemCategory => ItemCategory.Generic;
         public override ItemStorage ItemStorageFlags => ItemStorage.StackableFood;
-        public override ItemValue ItemValue => ItemValue.Medium;
+        public override ItemValue ItemValue => ItemValue.Small;
         //public override Appliance DedicatedProvider => Mod.FlourTortillaProvider; <- Swapped for ingredient lib so don't need this reference
 
 
