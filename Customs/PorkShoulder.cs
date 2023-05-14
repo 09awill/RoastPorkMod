@@ -29,7 +29,7 @@ namespace RoastPorkMod.Customs
             }
         };
 
-        public override void OnRegister(GameDataObject gameDataObject)
+        public override void OnRegister(Item gameDataObject)
         {
             GameObject go = Prefab.GetChild("PorkShoulder");
             go.ApplyMaterial("Pork Fat", "Pork", "Plastic - Black Dark");

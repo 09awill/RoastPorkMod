@@ -32,7 +32,7 @@ namespace RoastPorkMod.Customs
                 Result = Mod.Burnt
             }
         };
-        public override void OnRegister(GameDataObject gameDataObject)
+        public override void OnRegister(Item gameDataObject)
         {
             //third one should be string
 

@@ -47,7 +47,7 @@ namespace RoastPorkMod.Customs
                 }
             },
         };
-        public override void OnRegister(GameDataObject gameDataObject)
+        public override void OnRegister(ItemGroup gameDataObject)
         {
             Prefab.GetComponent<PlatedPorkChopWithToppingsItemGroupView>()?.Setup(Prefab);
 
