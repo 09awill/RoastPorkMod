@@ -56,12 +56,6 @@ namespace RoastPorkMod.Customs
             Prefab.ApplyMaterialToChild("Pork", "Porkchop Fat", "Porkchop");
             Material[] mats = new Material[] { MaterialUtils.GetExistingMaterial("Plastic - Orange") };
             Prefab.GetChild("AppleSauce").ApplyMaterial(mats);
-
-            if (Prefab.TryGetComponent<ItemGroupView>(out var itemGroupView))
-            {
-                GameObject clonedColourBlind = ColorblindUtils.cloneColourBlindObjectAndAddToItem(GameDataObject as ItemGroup);
-                ColorblindUtils.setColourBlindLabelObjectOnItemGroupView(itemGroupView, clonedColourBlind);
-            }
         }
     }
     public class PlatedPorkChopWithToppingsItemGroupView : ItemGroupView
