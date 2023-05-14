@@ -28,7 +28,7 @@ namespace RoastPorkMod.Customs
         public override float SplitSpeed => 3.0f;
 
 
-        public override void OnRegister(GameDataObject gameDataObject)
+        public override void OnRegister(Item gameDataObject)
         {
             Prefab.GetChildFromPath("PorkCracklingItem/PorkCracklingItem").ApplyMaterial("Sauce - Mushroom Cooked");
             Prefab.GetChildFromPath("PorkCracklingItem/PorkCracklingItem1").ApplyMaterial("Sauce - Mushroom Cooked");

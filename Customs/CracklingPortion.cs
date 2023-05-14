@@ -21,7 +21,7 @@ namespace RoastPorkMod.Customs
         //public override Appliance DedicatedProvider => Mod.FlourTortillaProvider; <- Swapped for ingredient lib so don't need this reference
 
 
-        public override void OnRegister(GameDataObject gameDataObject)
+        public override void OnRegister(Item gameDataObject)
         {
             GameObject crackling = Prefab.GetChild("PorkCracklingPortion");
             crackling.ApplyMaterial("Sauce - Mushroom Cooked");

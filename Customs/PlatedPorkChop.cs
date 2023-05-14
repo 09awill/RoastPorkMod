@@ -39,7 +39,7 @@ namespace RoastPorkMod.Customs
                 }
             },
         };
-        public override void OnRegister(GameDataObject gameDataObject)
+        public override void OnRegister(ItemGroup gameDataObject)
         {
             Prefab.GetChildFromPath("Plate/Plate/Cylinder").ApplyMaterial("Plate", "Plate - Ring");
             Prefab.ApplyMaterialToChild("Pork", "Porkchop Fat", "Porkchop");

@@ -24,7 +24,7 @@ namespace RoastPorkMod.Customs
         public override int SplitCount => 4;
         public override List<Item> SplitDepletedItems => new() { Mod.PorkChop };
         public override float SplitSpeed => 3.0f;
-        public override void OnRegister(GameDataObject gameDataObject)
+        public override void OnRegister(Item gameDataObject)
         {        
             Prefab.ApplyMaterialToChild("Pork1", "Porkchop Fat", "Porkchop");
             Prefab.ApplyMaterialToChild("Pork2", "Porkchop Fat", "Porkchop");
