@@ -1,14 +1,8 @@
-﻿using IngredientLib.Util;
-using KitchenData;
+﻿using KitchenData;
 using KitchenLib.Customs;
 using KitchenLib.Utils;
 using KitchenRoastPorkMod;
-using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using UnityEngine;
 
 namespace RoastPorkMod.Customs.Cards
 {
