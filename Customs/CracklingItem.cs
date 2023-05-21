@@ -1,17 +1,11 @@
-﻿using IngredientLib.Util;
-using Kitchen;
+﻿using Kitchen;
 using KitchenData;
 using KitchenLib.Customs;
 using KitchenLib.Utils;
 using KitchenRoastPorkMod;
-using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Reflection;
-using System.Text;
-using System.Threading.Tasks;
 using UnityEngine;
-using static RoastPorkMod.Customs.CookedPorkShoulderWithoutCrackling;
 
 namespace RoastPorkMod.Customs
 {
@@ -30,9 +24,9 @@ namespace RoastPorkMod.Customs
 
         public override void OnRegister(Item gameDataObject)
         {
-            Prefab.GetChildFromPath("PorkCracklingItem/PorkCracklingItem").ApplyMaterial("Sauce - Mushroom Cooked");
-            Prefab.GetChildFromPath("PorkCracklingItem/PorkCracklingItem1").ApplyMaterial("Sauce - Mushroom Cooked");
-            Prefab.GetChildFromPath("PorkCracklingItem/PorkCracklingItem2").ApplyMaterial("Sauce - Mushroom Cooked");
+            Prefab.GetChild("PorkCracklingItem/PorkCracklingItem").ApplyMaterial("Sauce - Mushroom Cooked");
+            Prefab.GetChild("PorkCracklingItem/PorkCracklingItem1").ApplyMaterial("Sauce - Mushroom Cooked");
+            Prefab.GetChild("PorkCracklingItem/PorkCracklingItem2").ApplyMaterial("Sauce - Mushroom Cooked");
 
 
             var view = Prefab.AddComponent<ObjectsSplittableView>();
@@ -40,8 +34,8 @@ namespace RoastPorkMod.Customs
 
             List<GameObject> list = new List<GameObject>()
             {
-                Prefab.GetChildFromPath("PorkCracklingItem/PorkCracklingItem2"),
-                Prefab.GetChildFromPath("PorkCracklingItem/PorkCracklingItem1"),
+                Prefab.GetChild("PorkCracklingItem/PorkCracklingItem2"),
+                Prefab.GetChild("PorkCracklingItem/PorkCracklingItem1"),
             };
             info.SetValue(view, list);
         }

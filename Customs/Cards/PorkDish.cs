@@ -1,5 +1,4 @@
-﻿using IngredientLib.Util;
-using KitchenData;
+﻿using KitchenData;
 using KitchenLib.Customs;
 using KitchenLib.Utils;
 using KitchenRoastPorkMod;
@@ -91,7 +90,7 @@ namespace RoastPorkMod.Customs.Cards
 
         public override void OnRegister(Dish gameDataObject)
         {
-            DisplayPrefab.GetChildFromPath("Plate/Plate/Cylinder").ApplyMaterial("Plate", "Plate - Ring");
+            DisplayPrefab.GetChild("Plate/Plate/Cylinder").ApplyMaterial("Plate", "Plate - Ring");
             DisplayPrefab.ApplyMaterialToChild("Pork", "Porkchop Fat", "Porkchop");
         }
     }

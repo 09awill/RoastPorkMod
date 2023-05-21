@@ -1,15 +1,8 @@
-﻿using IngredientLib.Util;
-using Kitchen;
-using KitchenData;
+﻿using KitchenData;
 using KitchenLib.Customs;
 using KitchenLib.Utils;
 using KitchenRoastPorkMod;
-using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Unity.Entities;
 using UnityEngine;
 
 namespace RoastPorkMod.Customs
@@ -41,7 +34,7 @@ namespace RoastPorkMod.Customs
         };
         public override void OnRegister(ItemGroup gameDataObject)
         {
-            Prefab.GetChildFromPath("Plate/Plate/Cylinder").ApplyMaterial("Plate", "Plate - Ring");
+            Prefab.GetChild("Plate/Plate/Cylinder").ApplyMaterial("Plate", "Plate - Ring");
             Prefab.ApplyMaterialToChild("Pork", "Porkchop Fat", "Porkchop");
 
 
