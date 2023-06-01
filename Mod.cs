@@ -7,8 +7,9 @@ using KitchenLib.Event;
 using KitchenLib.References;
 using KitchenLib.Utils;
 using KitchenMods;
-using RoastPorkMod.Customs;
 using RoastPorkMod.Customs.Cards;
+using RoastPorkMod.Customs.Pork;
+using RoastPorkMod.Customs;
 using System.Linq;
 using System.Reflection;
 using UnityEngine;
@@ -23,7 +24,7 @@ namespace KitchenRoastPorkMod
         // Mod Version must follow semver notation e.g. "1.2.3"
         public const string MOD_GUID = "Madvion.Plateup.RoastPorkMod";
         public const string MOD_NAME = "Roast Pork Mod";
-        public const string MOD_VERSION = "0.1.5";
+        public const string MOD_VERSION = "0.1.6";
         public const string MOD_AUTHOR = "Madvion";
         public const string MOD_GAMEVERSION = ">=1.1.4";
         // Game version this mod is designed for in semver
@@ -42,22 +43,51 @@ namespace KitchenRoastPorkMod
         internal static Item Plate => GetExistingGDO<Item>(ItemReferences.Plate);
         internal static Item DirtyPlate => GetExistingGDO<Item>(ItemReferences.PlateDirty);
         internal static Item Apple => GetExistingGDO<Item>(ItemReferences.Apple);
+        internal static Item ApplesChopped => GetExistingGDO<Item>(ItemReferences.AppleSlices);
         internal static Item Burnt => GetExistingGDO<Item>(ItemReferences.BurnedFood);
+        internal static Item Sugar => GetExistingGDO<Item>(ItemReferences.Sugar);
+        internal static Item Stuffing => GetExistingGDO<Item>(ItemReferences.Stuffing);
+        internal static Item ChoppedMushrooms => GetExistingGDO<Item>(ItemReferences.MushroomChopped);
+        internal static Item Mushroom => GetExistingGDO<Item>(ItemReferences.Mushroom);
+        internal static Item Onion => GetExistingGDO<Item>(ItemReferences.Onion);
+        internal static Item Flour => GetExistingGDO<Item>(ItemReferences.Flour);
+        internal static Item Water => GetExistingGDO<Item>(ItemReferences.Water);
+        internal static Item Carrots => GetExistingGDO<Item>(ItemReferences.Carrot);
+
+
+
+
+
+
 
 
         internal static Process Cook => GetExistingGDO<Process>(ProcessReferences.Cook);
+
         internal static Process Chop => GetExistingGDO<Process>(ProcessReferences.Chop);
         internal static Process RequireOven => GetExistingGDO<Process>(ProcessReferences.RequireOven);
 
 
 
         internal static Item PorkChop => Find<Item>(IngredientLib.References.GetIngredient("Porkchop"));
+        internal static Item Garlic => Find<Item>(IngredientLib.References.GetIngredient("Garlic"));
+        internal static Item MincedGarlic => Find<Item>(IngredientLib.References.GetIngredient("Minced Garlic"));
+
 
 
 
         internal static Item CracklingItem => GetModdedGDO<Item, CracklingItem>();
         internal static Item CracklingPortion => GetModdedGDO<Item, CracklingPortion>();
         internal static Item AppleSauce => GetModdedGDO<Item, AppleSauce>();
+        internal static Item GarlicMushroomsCooked => GetModdedGDO<Item, GarlicMushroomsCooked>();
+        internal static Item RoastedCarrots => GetModdedGDO<Item, RoastedCarrots>();
+        internal static Item SproutsCooked => GetModdedGDO<Item, SproutsCooked>();
+        internal static Item SproutsStalk => GetModdedGDO<Item, SproutsStalk>();
+        internal static Item SproutsRaw => GetModdedGDO<Item, SproutsRaw>();
+
+
+
+
+
 
 
         internal static ItemGroup PlatedPorkChop => GetModdedGDO<ItemGroup, PlatedPorkChop>();
@@ -68,6 +98,8 @@ namespace KitchenRoastPorkMod
         internal static Item PorkShoulder => GetModdedGDO<Item, PorkShoulder>();
 
         internal static Appliance PorkShoulderProvider => GetModdedGDO<Appliance, PorkShoulderProvider>();
+        internal static Appliance SproutsStalkProvider => GetModdedGDO<Appliance, SproutStalkProvider>();
+
         internal static Dish CracklingStarter => GetModdedGDO<Dish, CracklingStarterDish>();
         internal static Dish PorkDish => GetModdedGDO<Dish, PorkDish>();
         internal static Dish PorkDishWithToppings => GetModdedGDO<Dish, PorkDishWithToppings>();
@@ -102,6 +134,21 @@ namespace KitchenRoastPorkMod
             AddGameDataObject<PorkDish>();
             AddGameDataObject<PorkDishWithToppings>();
             AddGameDataObject<CookedPorkShoulderWithoutCrackling>();
+            AddGameDataObject<PorkDishWithGarlicMushrooms>();
+            AddGameDataObject<PorkDishWithStuffing>();
+            AddGameDataObject<RoastCarrotsSide>();
+            AddGameDataObject<SproutSide>();
+            AddGameDataObject<SproutStalkProvider>();
+
+            AddGameDataObject<GarlicMushroomsCooked>();
+            AddGameDataObject<GarlicMushroomsRaw>();
+            AddGameDataObject<RoastedCarrots>();
+            AddGameDataObject<SproutsCooked>();
+            AddGameDataObject<SproutsRaw>();
+            AddGameDataObject<SproutsStalk>();
+
+
+
 
 
 
@@ -128,14 +175,17 @@ namespace KitchenRoastPorkMod
             // Perform actions when game data is built
             Events.BuildGameDataEvent += delegate (object s, BuildGameDataEventArgs args)
             {
-                Item apple = args.gamedata.Get<Item>(ItemReferences.AppleSlices);
+                
+                Item carrots = args.gamedata.Get<Item>(ItemReferences.Carrot);
                 Item.ItemProcess proc = new Item.ItemProcess
                 {
-                    Duration = 1,
-                    Process = Mod.Chop,
-                    Result = Mod.AppleSauce,
+                    Duration = 3,
+                    Process = Mod.Cook,
+                    IsBad = false,
+                    Result = Mod.RoastedCarrots,
                 };
-                apple.DerivedProcesses.Add(proc);
+                carrots.DerivedProcesses.Add(proc);
+                
             };
         }
 

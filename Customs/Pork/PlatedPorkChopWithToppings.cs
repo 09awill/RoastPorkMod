@@ -11,7 +11,7 @@ using System.Text;
 using System.Threading.Tasks;
 using UnityEngine;
 
-namespace RoastPorkMod.Customs
+namespace RoastPorkMod.Customs.Pork
 {
     internal class PlatedPorkChopWithToppings : CustomItemGroup<PlatedPorkChopWithToppingsItemGroupView>
     {
@@ -41,9 +41,12 @@ namespace RoastPorkMod.Customs
                 Max = 1,
                 Min = 1,
                 IsMandatory = false,
+                RequiresUnlock = true,
                 Items = new List<Item>()
                 {
                     Mod.AppleSauce,
+                    Mod.Stuffing,
+                    Mod.GarlicMushroomsCooked
                 }
             },
         };
@@ -56,6 +59,22 @@ namespace RoastPorkMod.Customs
             Prefab.ApplyMaterialToChild("Pork", "Porkchop Fat", "Porkchop");
             Material[] mats = new Material[] { MaterialUtils.GetExistingMaterial("Plastic - Orange") };
             Prefab.GetChild("AppleSauce").ApplyMaterial(mats);
+            for (int i = 1; i < 3; i++)
+            {
+                Prefab.ApplyMaterialToChild($"Stuffing/Ice Cream ({i})", "Bread - Inside Cooked");
+            }
+
+            GameObject Mushrooms = Prefab.GetChild("GarlicMushroomsCooked/Mushrooms");
+            for (int i = 1; i < 4; i++)
+            {
+                Mushrooms.ApplyMaterialToChild($"mushroomHalf ({i})/mushroomHalf", "Mushroom Cooked", "Mushroom Cooked");
+            }
+            GameObject herbs = Prefab.GetChild("GarlicMushroomsCooked/Herbs");
+            for (int i = 0; i < 8; i++)
+            {
+                herbs.ApplyMaterialToChild($"Cube ({i})", "Rug - Dark Green");
+            }
+
         }
     }
     public class PlatedPorkChopWithToppingsItemGroupView : ItemGroupView
@@ -71,11 +90,21 @@ namespace RoastPorkMod.Customs
                 {
                     GameObject = GameObjectUtils.GetChildObject(pPrefab, "Pork"),
                     Item = Mod.PorkChop
-                }, 
+                },
                 new()
                 {
                     GameObject = GameObjectUtils.GetChildObject(pPrefab, "AppleSauce"),
                     Item = Mod.AppleSauce
+                },
+                new()
+                {
+                    GameObject = GameObjectUtils.GetChildObject(pPrefab, "Stuffing"),
+                    Item = Mod.Stuffing
+                },               
+                new()
+                {
+                    GameObject = GameObjectUtils.GetChildObject(pPrefab, "GarlicMushroomsCooked"),
+                    Item = Mod.GarlicMushroomsCooked
                 }
             };
             ComponentLabels = new()
@@ -89,6 +118,16 @@ namespace RoastPorkMod.Customs
                 {
                     Text = "A",
                     Item = Mod.AppleSauce
+                },
+                new()
+                {
+                    Text = "S",
+                    Item = Mod.Stuffing
+                },                
+                new()
+                {
+                    Text = "M",
+                    Item = Mod.GarlicMushroomsCooked
                 }
             };
         }
