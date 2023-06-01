@@ -23,6 +23,8 @@ namespace RoastPorkMod.Customs.Pork
         public override List<Item> SplitDepletedItems => new() { Mod.SproutsRaw };
         public override int SplitCount => 1;
         public override float SplitSpeed => 3.0f;
+        public override string ColourBlindTag => "SpS";
+
 
         public override void OnRegister(Item gameDataObject)
         {

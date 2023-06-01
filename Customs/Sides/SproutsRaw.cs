@@ -19,6 +19,7 @@ namespace RoastPorkMod.Customs.Pork
         public override ItemStorage ItemStorageFlags => ItemStorage.StackableFood;
         public override ItemValue ItemValue => ItemValue.SideMedium;
         //public override Appliance DedicatedProvider => Mod.FlourTortillaProvider; <- Swapped for ingredient lib so don't need this reference
+        public override string ColourBlindTag => "RSp";
 
         public override List<Item.ItemProcess> Processes => new List<Item.ItemProcess>
         {
