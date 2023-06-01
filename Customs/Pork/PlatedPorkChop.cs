@@ -5,7 +5,7 @@ using KitchenRoastPorkMod;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace RoastPorkMod.Customs
+namespace RoastPorkMod.Customs.Pork
 {
     internal class PlatedPorkChop : CustomItemGroup
     {

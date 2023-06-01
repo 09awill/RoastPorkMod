@@ -33,14 +33,15 @@ namespace RoastPorkMod.Customs.Cards
             new Dish.IngredientUnlock
             {
                 Ingredient = Mod.AppleSauce,
-                MenuItem = Mod.PlatedPorkChop
+                MenuItem = Mod.PlatedPorkChopWithToppings
             },
         };
         public override HashSet<Item> MinimumIngredients => new()
         {
             Mod.PorkShoulder,
             Mod.Plate,
-            Mod.Apple
+            Mod.Apple,
+            Mod.Sugar
         };
         public override HashSet<Process> RequiredProcesses => new()
         {

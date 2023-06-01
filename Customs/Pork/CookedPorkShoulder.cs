@@ -9,7 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using UnityEngine;
 
-namespace RoastPorkMod.Customs
+namespace RoastPorkMod.Customs.Pork
 {
     internal class CookedPorkShoulder : CustomItem
     {
@@ -18,7 +18,7 @@ namespace RoastPorkMod.Customs
         public override ItemCategory ItemCategory => ItemCategory.Generic;
         public override ItemValue ItemValue => ItemValue.MediumLarge;
         public override Item SplitSubItem => Mod.CracklingItem;
-        public override List<Item> SplitDepletedItems => new() { Mod.CookedPorkShoulderWithoutCrackling};
+        public override List<Item> SplitDepletedItems => new() { Mod.CookedPorkShoulderWithoutCrackling };
         public override int SplitCount => 1;
         public override float SplitSpeed => 3.0f;
 

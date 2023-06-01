@@ -12,7 +12,7 @@ using System.Threading.Tasks;
 using Unity.Entities;
 using UnityEngine;
 
-namespace RoastPorkMod.Customs
+namespace RoastPorkMod.Customs.Pork
 {
     internal class CookedPorkShoulderWithoutCrackling : CustomItem
     {
@@ -25,7 +25,7 @@ namespace RoastPorkMod.Customs
         public override List<Item> SplitDepletedItems => new() { Mod.PorkChop };
         public override float SplitSpeed => 3.0f;
         public override void OnRegister(Item gameDataObject)
-        {        
+        {
             Prefab.ApplyMaterialToChild("Pork1", "Porkchop Fat", "Porkchop");
             Prefab.ApplyMaterialToChild("Pork2", "Porkchop Fat", "Porkchop");
             Prefab.ApplyMaterialToChild("Pork3", "Porkchop Fat", "Porkchop");

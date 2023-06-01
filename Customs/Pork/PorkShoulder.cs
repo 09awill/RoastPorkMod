@@ -9,7 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using UnityEngine;
 
-namespace RoastPorkMod.Customs
+namespace RoastPorkMod.Customs.Pork
 {
     internal class PorkShoulder : CustomItem
     {

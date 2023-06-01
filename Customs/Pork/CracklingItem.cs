@@ -7,18 +7,19 @@ using System.Collections.Generic;
 using System.Reflection;
 using UnityEngine;
 
-namespace RoastPorkMod.Customs
+namespace RoastPorkMod.Customs.Pork
 {
     internal class CracklingItem : CustomItem
     {
         public override string UniqueNameID => "CracklingItem";
         public override GameObject Prefab => Mod.Bundle.LoadAsset<GameObject>("CracklingItem");
         public override ItemCategory ItemCategory => ItemCategory.Generic;
+        public override ItemStorage ItemStorageFlags => ItemStorage.StackableFood;
         public override ItemValue ItemValue => ItemValue.MediumLarge;
         public override string ColourBlindTag => "C";
         public override Item SplitSubItem => Mod.CracklingPortion;
-        public override List<Item> SplitDepletedItems => new() { Mod.CracklingPortion };
-        public override int SplitCount => 2;
+        //public override List<Item> SplitDepletedItems => new() { Mod.CracklingPortion };
+        public override int SplitCount => 3;
         public override float SplitSpeed => 3.0f;
 
 
@@ -34,6 +35,7 @@ namespace RoastPorkMod.Customs
 
             List<GameObject> list = new List<GameObject>()
             {
+                Prefab.GetChild("PorkCracklingItem/PorkCracklingItem"),
                 Prefab.GetChild("PorkCracklingItem/PorkCracklingItem2"),
                 Prefab.GetChild("PorkCracklingItem/PorkCracklingItem1"),
             };
