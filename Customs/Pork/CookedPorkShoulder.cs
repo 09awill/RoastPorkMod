@@ -20,7 +20,7 @@ namespace RoastPorkMod.Customs.Pork
         public override Item SplitSubItem => Mod.CracklingItem;
         public override List<Item> SplitDepletedItems => new() { Mod.CookedPorkShoulderWithoutCrackling };
         public override int SplitCount => 1;
-        public override float SplitSpeed => 3.0f;
+        public override float SplitSpeed => 2.0f;
 
         public override List<Item.ItemProcess> Processes => new List<Item.ItemProcess>
         {

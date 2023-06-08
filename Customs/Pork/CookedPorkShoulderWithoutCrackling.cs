@@ -23,7 +23,7 @@ namespace RoastPorkMod.Customs.Pork
         public override Item SplitSubItem => Mod.PorkChop;
         public override int SplitCount => 4;
         public override List<Item> SplitDepletedItems => new() { Mod.PorkChop };
-        public override float SplitSpeed => 3.0f;
+        public override float SplitSpeed => 1.5f;
         public override void OnRegister(Item gameDataObject)
         {
             Prefab.ApplyMaterialToChild("Pork1", "Porkchop Fat", "Porkchop");

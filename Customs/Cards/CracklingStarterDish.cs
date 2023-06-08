@@ -15,7 +15,7 @@ namespace RoastPorkMod.Customs.Cards
         public override string UniqueNameID => "Crackling Starter";
         public override DishType Type => DishType.Starter;
         public override Unlock.RewardLevel ExpReward => Unlock.RewardLevel.Small;
-        public override DishCustomerChange CustomerMultiplier => DishCustomerChange.SmallDecrease;
+        public override DishCustomerChange CustomerMultiplier => DishCustomerChange.None;
         public override CardType CardType => CardType.Default;
         public override UnlockGroup UnlockGroup => UnlockGroup.Dish;
         public override bool IsUnlockable => true;
