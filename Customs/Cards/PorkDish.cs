@@ -18,7 +18,7 @@ namespace RoastPorkMod.Customs.Cards
         public override DishType Type => DishType.Base;
         public override GameObject DisplayPrefab => Mod.Bundle.LoadAsset<GameObject>("PlatedPorkIcon");
         public override GameObject IconPrefab => DisplayPrefab;
-        public override DishCustomerChange CustomerMultiplier => DishCustomerChange.None;
+        public override DishCustomerChange CustomerMultiplier => DishCustomerChange.SmallIncrease;
         public override Unlock.RewardLevel ExpReward => Unlock.RewardLevel.Large;
         public override UnlockGroup UnlockGroup => UnlockGroup.Dish;
         public override CardType CardType => CardType.Default;
