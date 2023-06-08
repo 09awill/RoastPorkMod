@@ -18,6 +18,7 @@ namespace RoastPorkMod.Customs
         public override ItemCategory ItemCategory => ItemCategory.Generic;
         public override ItemStorage ItemStorageFlags => ItemStorage.StackableFood;
         public override ItemValue ItemValue => ItemValue.Medium;
+        public override string ColourBlindTag => "AS";
 
         public override List<ItemGroup.ItemSet> Sets => new()
         {

@@ -50,18 +50,18 @@ namespace RoastPorkMod.Customs.Cards
         };
         public override Dictionary<Locale, string> Recipe => new()
         {
-            { Locale.English, "Chop apples, then chop again to make sauce, add to plated pork" },
-            { Locale.French, "Hacher les pommes, puis hacher à nouveau pour faire de la sauce, ajouter au porc dans l'assiette!" },
-            { Locale.German,  "Äpfel hacken, dann nochmal hacken, um eine Sauce zu machen, auf das angerichtete Schweinefleisch geben!" },
-            { Locale.Spanish,  "Cortar las manzanas, luego picar de nuevo para hacer la salsa, agregar al cerdo en el plato!" },
-            { Locale.Polish, "Posiekaj jabłka, następnie posiekaj ponownie, aby zrobić sos, dodaj do podanego na talerzu mięsa wieprzowego!" },
-            { Locale.Russian, "Нарежьте яблоки, затем нарежьте их еще раз, чтобы сделать соус, добавьте на тарелку с свининой!" },
-            { Locale.PortugueseBrazil, "Pique as maçãs, depois pique novamente para fazer molho, adicione ao porco no prato!" },
-            { Locale.Japanese, "リンゴを切ってから再び刻んでソースを作り、盛り付けた豚肉に加えます！" },
-            { Locale.ChineseSimplified, "切碎苹果，再切一次制成酱汁，加入盘中的猪肉！" },
-            { Locale.ChineseTraditional, "切碎蘋果，再切一次製成醬汁，加入盤中的豬肉！" },
-            { Locale.Korean,  "사과를 잘게 썰고 다시 잘게 썰어 소스를 만든 다음 접시에 올린 돼지고기에 넣으세요!" },
-            { Locale.Turkish,  "Elmaları doğrayın, ardından sos yapmak için tekrar doğrayın, tabağa koyduğunuz domuz etine ekleyin!" },
+            { Locale.English, "Chop apples, then combine with sugar to make sauce, add to plated pork" },
+            { Locale.French, "Coupez les pommes en dés, puis mélangez-les avec du sucre pour faire une sauce, ajoutez-la au porc dressé." },
+            { Locale.German,  "Äpfel würfeln, dann mit Zucker vermischen, um eine Sauce herzustellen, zum angerichteten Schweinefleisch hinzufügen." },
+            { Locale.Spanish,  "Corta las manzanas en trozos, luego combínalas con azúcar para hacer una salsa, añádela al cerdo en el plato." },
+            { Locale.Polish, "Posiekaj jabłka, następnie połącz je z cukrem, aby przygotować sos, dodaj go do porcji ułożonego na talerzu." },
+            { Locale.Russian, "Нарежьте яблоки, затем соедините с сахаром, чтобы приготовить соус, добавьте к порционированной свинине." },
+            { Locale.PortugueseBrazil, "Pique as maçãs, em seguida, misture com açúcar para fazer o molho, adicione ao porco no prato." },
+            { Locale.Japanese, "リンゴを切って、砂糖と組み合わせてソースを作り、盛り付けた豚肉に加えます" },
+            { Locale.ChineseSimplified, "切碎苹果，然后与糖混合制成酱汁，加到盘中的猪肉上" },
+            { Locale.ChineseTraditional, "切碎蘋果，然後與糖混合製成醬汁，加到盤中的豬肉上" },
+            { Locale.Korean,  "사과를 썰어서 설탕과 함께 섞어 소스를 만들고, 그것을 담아낸 돼지고기에 추가합니다" },
+            { Locale.Turkish,  "Elmaları doğrayın, ardından şekerle karıştırarak sos yapın ve tabağa yerleştirilmiş olan domuz etine ekleyin." },
         };
         public override List<(Locale, UnlockInfo)> InfoList => new ()
         {
