@@ -18,7 +18,6 @@ namespace RoastPorkMod.Customs.Pork
         public override ItemValue ItemValue => ItemValue.MediumLarge;
         public override string ColourBlindTag => "C";
         public override Item SplitSubItem => Mod.CracklingPortion;
-        public override bool SplitByCopying => true;
         public override List<Item> SplitDepletedItems => new() { Mod.CracklingPortion };
         public override int SplitCount => 2;
         public override float SplitSpeed => 3.0f;
