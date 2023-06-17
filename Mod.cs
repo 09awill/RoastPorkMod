@@ -13,6 +13,7 @@ using RoastPorkMod.Customs;
 using System.Linq;
 using System.Reflection;
 using UnityEngine;
+using System.Collections.Generic;
 
 // Namespace should have "Kitchen" in the beginning
 namespace KitchenRoastPorkMod
@@ -95,6 +96,8 @@ namespace KitchenRoastPorkMod
 
         internal static Item CookedPorkShoulder => GetModdedGDO<Item, CookedPorkShoulder>();
         internal static Item CookedPorkShoulderWithoutCrackling => GetModdedGDO<Item, CookedPorkShoulderWithoutCrackling>();
+        internal static Item CookedPorkShoulderPortionable => GetModdedGDO<Item, CookedPorkShoulderPortionable>();
+
         internal static Item PorkShoulder => GetModdedGDO<Item, PorkShoulder>();
 
         internal static Appliance PorkShoulderProvider => GetModdedGDO<Appliance, PorkShoulderProvider>();
@@ -134,6 +137,7 @@ namespace KitchenRoastPorkMod
             AddGameDataObject<PorkDish>();
             AddGameDataObject<PorkDishWithToppings>();
             AddGameDataObject<CookedPorkShoulderWithoutCrackling>();
+            AddGameDataObject<CookedPorkShoulderPortionable>();
             AddGameDataObject<PorkDishWithGarlicMushrooms>();
             AddGameDataObject<PorkDishWithStuffing>();
             AddGameDataObject<RoastCarrotsSide>();
@@ -146,10 +150,6 @@ namespace KitchenRoastPorkMod
             AddGameDataObject<SproutsCooked>();
             AddGameDataObject<SproutsRaw>();
             AddGameDataObject<SproutsStalk>();
-
-
-
-
 
 
 

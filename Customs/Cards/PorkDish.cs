@@ -18,7 +18,7 @@ namespace RoastPorkMod.Customs.Cards
         public override DishType Type => DishType.Base;
         public override GameObject DisplayPrefab => Mod.Bundle.LoadAsset<GameObject>("PlatedPorkIcon");
         public override GameObject IconPrefab => DisplayPrefab;
-        public override DishCustomerChange CustomerMultiplier => DishCustomerChange.SmallIncrease;
+        public override DishCustomerChange CustomerMultiplier => DishCustomerChange.None;
         public override Unlock.RewardLevel ExpReward => Unlock.RewardLevel.Large;
         public override UnlockGroup UnlockGroup => UnlockGroup.Dish;
         public override CardType CardType => CardType.Default;
@@ -35,7 +35,9 @@ namespace RoastPorkMod.Customs.Cards
             "The Pig and Pickle",
             "Bacon Me Crazy",
             "Boar-ing Kitchen",
-            "Quit Hogging The Stove"
+            "Quit Hogging The Stove",
+            "Miny's Porky Place",
+            "Pork on your fork"
 
         };
         public override List<Dish.MenuItem> ResultingMenuItems => new()
