@@ -14,7 +14,6 @@ namespace RoastPorkMod.Customs.Cards
         public override Unlock.RewardLevel ExpReward => Unlock.RewardLevel.Small;
         public override UnlockGroup UnlockGroup => UnlockGroup.Dish;
         public override CardType CardType => CardType.Default;
-        
         public override List<Dish.MenuItem> ResultingMenuItems => new()
         {
             new Dish.MenuItem

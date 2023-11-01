@@ -24,7 +24,7 @@ namespace RoastPorkMod.Customs.Pork
         {
             new Item.ItemProcess
             {
-                Duration = 4,
+                Duration = 2,
                 Process = Mod.Chop,
                 IsBad = false,
                 Result = Mod.CookedPorkShoulderPortionable
