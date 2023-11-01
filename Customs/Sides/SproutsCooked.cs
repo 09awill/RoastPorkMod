@@ -19,7 +19,7 @@ namespace RoastPorkMod.Customs.Pork
         public override ItemStorage ItemStorageFlags => ItemStorage.StackableFood;
         public override ItemValue ItemValue => ItemValue.SideMedium;
         public override bool IsMergeableSide => true;
-        public override string ColourBlindTag => "Sp";
+        //public override string ColourBlindTag => "Sp";
         public override List<Item.ItemProcess> Processes => new List<Item.ItemProcess>
         {
             new Item.ItemProcess

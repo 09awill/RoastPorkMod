@@ -14,7 +14,6 @@ namespace RoastPorkMod.Customs.Pork
         public override string UniqueNameID => "CracklingItem";
         public override GameObject Prefab => Mod.Bundle.LoadAsset<GameObject>("CracklingItem");
         public override ItemCategory ItemCategory => ItemCategory.Generic;
-        public override ItemStorage ItemStorageFlags => ItemStorage.StackableFood;
         public override ItemValue ItemValue => ItemValue.MediumLarge;
         public override string ColourBlindTag => "C";
         public override Item SplitSubItem => Mod.CracklingPortion;

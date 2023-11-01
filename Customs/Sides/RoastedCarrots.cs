@@ -16,10 +16,11 @@ namespace RoastPorkMod.Customs.Pork
     {
         public override string UniqueNameID => "Roasted Carrots";
         public override GameObject Prefab => Mod.Bundle.LoadAsset<GameObject>("RoastedCarrot"); // Make model
+        public override GameObject SidePrefab => Mod.Bundle.LoadAsset<GameObject>("RoastedCarrot");
         public override ItemCategory ItemCategory => ItemCategory.Generic;
         public override ItemStorage ItemStorageFlags => ItemStorage.StackableFood;
         public override ItemValue ItemValue => ItemValue.SideMedium;
-        public override string ColourBlindTag => "RC";
+        //public override string ColourBlindTag => "RC";
 
         public override List<Item.ItemProcess> Processes => new List<Item.ItemProcess>
         {

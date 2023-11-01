@@ -18,7 +18,7 @@ namespace RoastPorkMod.Customs.Cards
         public override DishType Type => DishType.Base;
         public override GameObject DisplayPrefab => Mod.Bundle.LoadAsset<GameObject>("PlatedPorkIcon");
         public override GameObject IconPrefab => DisplayPrefab;
-        public override DishCustomerChange CustomerMultiplier => DishCustomerChange.SmallIncrease;
+        public override DishCustomerChange CustomerMultiplier => DishCustomerChange.None;
         public override Unlock.RewardLevel ExpReward => Unlock.RewardLevel.Large;
         public override UnlockGroup UnlockGroup => UnlockGroup.Dish;
         public override CardType CardType => CardType.Default;
@@ -35,7 +35,9 @@ namespace RoastPorkMod.Customs.Cards
             "The Pig and Pickle",
             "Bacon Me Crazy",
             "Boar-ing Kitchen",
-            "Quit Hogging The Stove"
+            "Quit Hogging The Stove",
+            "Miny's Porky Place",
+            "Pork on your fork"
 
         };
         public override List<Dish.MenuItem> ResultingMenuItems => new()
@@ -59,18 +61,18 @@ namespace RoastPorkMod.Customs.Cards
         };
         public override Dictionary<Locale, string> Recipe => new()
         {
-            { Locale.English, "Cook Pork Shoulder then take off the crackling, then portion cooked shoulder into steaks, plate up and serve!" },
-            { Locale.French, "Cuire l'épaule de porc, retirer le croustillant, couper en tranches puis dresser sur l'assiette et servir !" },
-            { Locale.German, "Schweineschulter kochen, das Knusprige abnehmen, in Steaks portionieren, auf einem Teller anrichten und servieren!" },
-            { Locale.Spanish,  "Cocinar la paleta de cerdo, quitar la piel crujiente, cortar en filetes, servir en un plato y ¡listo!" },
-            { Locale.Polish, "Ugotuj szynkę wieprzową, zdejmij skórkę, następnie pokrój w steki, ułóż na talerzu i podaj!" },
-            { Locale.Russian, "Приготовить свиное плечо, снять хрустящую корочку, разделить на стейки, выложить на тарелку и подать!" },
-            { Locale.PortugueseBrazil, "Cozinhe o ombro de porco, retire a pele crocante, corte em bifes, sirva em um prato e pronto!" },
-            { Locale.Japanese, "豚肩肉を調理し、かりっとした皮を取り除いてステーキにカットし、皿に盛って提供してください！" },
-            { Locale.ChineseSimplified,   "烹饪猪肩肉，取下脆皮，切成牛排，摆盘上菜！" },
-            { Locale.ChineseTraditional, "烹飪豬肩肉，取下酥脆皮，切成牛排，擺盤上菜！" },
-            { Locale.Korean, "돼지 어깨고기를 요리하고 바삭한 껍질을 제거한 후 스테이크로 나누어 접시에 담아 서빙하세요!" },
-            { Locale.Turkish,  "Domuz omuzu pişirin, çıtır kabuğunu çıkarın, pişmiş omuzu biftekler halinde porsiyonlayın, tabağa yerleştirin ve servis yapın!" },
+            { Locale.English, "Cook Pork Shoulder then take off the crackling, then chop and portion cooked shoulder into steaks, plate up and serve!" },
+            { Locale.French, "Cuire l'épaule de porc, puis retirer le croustillant, ensuite découper et portionner l'épaule cuite en steaks, dresser sur assiettes et servir !" },
+            { Locale.German, "Kochen Sie die Schweineschulter, nehmen Sie dann die knusprige Haut ab, schneiden Sie die gekochte Schulter in Steaks und portionieren Sie sie, richten Sie sie auf Tellern an und servieren Sie sie!" },
+            { Locale.Spanish,  "Cocine el hombro de cerdo, luego retire la piel crujiente, después corte y porcione el hombro cocido en filetes, sirva en platos ¡y a disfrutar!" },
+            { Locale.Polish, "Ugotuj bark wieprzowy, następnie usuń chrupiącą skórkę, potem pokrój i porcjnuj ugotowany bark na steki, ułóż na talerzach i podawaj!" },
+            { Locale.Russian, "Приготовьте свиную плечевую кость, затем снимите хрустящую корочку, затем нарежьте и разделите приготовленное мясо на стейки, разложите на тарелках и подавайте!" },
+            { Locale.PortugueseBrazil, "Cozinhe o ombro de porco e depois retire a pele crocante. Em seguida, corte e divida o ombro cozido em bifes, coloque nos pratos e sirva!" },
+            { Locale.Japanese, "豚肩肉を調理し、その後パリパリの皮を取り除きます。次に、調理した肩肉をステーキに切り分けて盛り付け、提供してください！" },
+            { Locale.ChineseSimplified,   "烹饪猪肩肉，然后去掉表面的脆皮，再将烹煮好的肩肉切成片，摆盘并上菜！" },
+            { Locale.ChineseTraditional, "烹飪豬肩肉，然後去掉脆皮，再將熟肩肉切成扒片，盛盤上菜！" },
+            { Locale.Korean, "돼지 어깨고기를 요리한 다음 바삭한 피부를 떼어내고, 그 후에 요리된 어깨고기를 스테이크로 썬 다음, 접시에 담아서 제공하세요!" },
+            { Locale.Turkish,  "Domuz omzunu pişirin, ardından çıtır çıtır kabuğunu çıkarın, sonra pişmiş omuzu biftekler halinde doğrayın ve tabaklara yerleştirip servis yapın!" },
         };
         public override List<(Locale, UnlockInfo)> InfoList => new()
         {
